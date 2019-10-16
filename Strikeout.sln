@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellane
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Media", "Media", "{6700FAB0-7723-495E-8522-7F38FC0A3E67}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\Example.png = ..\..\..\Downloads\Example.png
+		Media\Example.png = Media\Example.png
 	EndProjectSection
 EndProject
 Global

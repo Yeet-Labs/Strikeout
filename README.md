@@ -8,4 +8,4 @@ This project welcomes and appreciates contributions.
 
 ## License
 
-This project and it's source is provided under the (MIT license)[LICENSE.txt].
+This project and it's source is provided under the [MIT license](LICENSE.txt).

@@ -13,6 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellane
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Media", "Media", "{6700FAB0-7723-495E-8522-7F38FC0A3E67}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\Example.png = ..\..\..\Downloads\Example.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6700FAB0-7723-495E-8522-7F38FC0A3E67} = {ECA85A0B-0B75-4859-95BA-1C49D7AD648A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21CD14FC-B564-4E7B-9CE7-D542F7649217}

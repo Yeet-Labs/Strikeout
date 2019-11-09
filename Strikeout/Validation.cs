@@ -114,11 +114,12 @@ namespace Strikeout
             {
                 // NOTE: This performs an effective cast from container to Container<TData> when TData is not exactly TContainerData, but it is dynamically known that TContainerData derives from TData.
                 
-                Container<TData> proxy = new Container<TData> 
-                { 
-                    Data = (TData)Convert.ChangeType(container.Data, typeof(TData), CultureInfo.InvariantCulture),
-                    Head = false
-                };
+                Container<TData> proxy = new Container<TData> { Head = false };
+
+                if (container.Data is TData data)
+                {
+                    proxy.Data = data;
+                }
 
                 proxy.Results.AddRange(container.Results);
                 return Analyze(proxy);

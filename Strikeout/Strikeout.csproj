@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Company>Yeet Labs</Company>
     <Authors>YeetLabs, TheFanatr</Authors>
     <Product>Strikeout Validation Engine</Product>

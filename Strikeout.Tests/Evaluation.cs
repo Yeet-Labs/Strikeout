@@ -11,15 +11,26 @@ namespace Strikeout.Tests
     {
         // TODO: Test functionality when dependencies that include a custom target fail.
 
-        static Analyzer<string> Basic { get; set; } = new Analyzer<string>
+        static Analyzer<object> Essential { get; set; } = new Analyzer<object>
         {
-            Key = nameof(Basic),
+            Key = nameof(Essential),
             Metadata = Analyzer.Characteristics.Generic,
             Processor = container => container.Data switch
             {
-                null => BasicFailureA,
-                "" => BasicFailureB,
-                { Length: 1 } => BasicFailureC,
+                null => EssentialFailureA,
+                _ => true
+            }
+        };
+
+        static Analyzer<string> Basic { get; set; } = new Analyzer<string>
+        {
+            Key = nameof(Basic),
+            Dependencies = { Essential },
+            Metadata = Analyzer.Characteristics.Generic,
+            Processor = container => container.Data switch
+            {
+                "" => BasicFailureA,
+                { Length: 1 } => BasicFailureB,
                 _ => true
             }
         };
@@ -111,7 +122,7 @@ namespace Strikeout.Tests
             Assert.ThrowsException<KeyNotFoundException>(() => analysis[Everything.Key]);
         }
 
-        [DataTestMethod, DataRow(default, nameof(BasicFailureA), DisplayName = "Basic Failure Case 1"), DataRow("", nameof(BasicFailureB), DisplayName = "Basic Failure Case 2"), DataRow(" ", nameof(BasicFailureC), DisplayName = "Basic Failure Case 3"), DataRow("Peter", nameof(ArbitraryFailureA), DisplayName = "Arbitrary Failure Case 1"), DataRow("Potato", nameof(ArbitraryFailureB), DisplayName = "Arbitrary Failure Case 2"), DataRow("1234567890123", nameof(ExampleFailureA), DisplayName = "Example Failure Case 1"), DataRow("123", nameof(AuxiliaryFailureA), DisplayName = "Auxiliary Failure Case 1")]
+        [DataTestMethod, DataRow(default, nameof(EssentialFailureA), DisplayName = "Essential Failure Case 1"), DataRow("", nameof(BasicFailureA), DisplayName = "Basic Failure Case 1"), DataRow(" ", nameof(BasicFailureB), DisplayName = "Basic Failure Case 2"), DataRow("Peter", nameof(ArbitraryFailureA), DisplayName = "Arbitrary Failure Case 1"), DataRow("Potato", nameof(ArbitraryFailureB), DisplayName = "Arbitrary Failure Case 2"), DataRow("1234567890123", nameof(ExampleFailureA), DisplayName = "Example Failure Case 1"), DataRow("123", nameof(AuxiliaryFailureA), DisplayName = "Auxiliary Failure Case 1")]
         public void TestUnkeyedPackageAnalysisAgainstInvalidData(string data, string resource)
         {
             // NOTE: The Example analyzer is being treated as a reference here, as in validation of the package being made from it should always succeed.

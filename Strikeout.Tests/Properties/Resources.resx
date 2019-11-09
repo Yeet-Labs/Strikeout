@@ -127,13 +127,13 @@
     <value>That's a number of characters very close to Pi, uh oh!</value>
   </data>
   <data name="BasicFailureA" xml:space="preserve">
-    <value>{0} can't be null.</value>
-  </data>
-  <data name="BasicFailureB" xml:space="preserve">
     <value>{0} can't be empty.</value>
   </data>
-  <data name="BasicFailureC" xml:space="preserve">
+  <data name="BasicFailureB" xml:space="preserve">
     <value>That's too short!</value>
+  </data>
+  <data name="EssentialFailureA" xml:space="preserve">
+    <value>{0} can't be null.</value>
   </data>
   <data name="ExampleFailureA" xml:space="preserve">
     <value>That's an unlucky number of characters you have there.</value>

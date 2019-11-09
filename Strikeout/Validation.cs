@@ -110,6 +110,19 @@ namespace Strikeout
             {
                 return Analyze(container as Container<TData>);
             }
+            else if (typeof(TContainerData).IsSubclassOf(typeof(TData)))
+            {
+                // NOTE: This performs an effective cast from container to Container<TData> when TData is not exactly TContainerData, but it is dynamically known that TContainerData derives from TData.
+                
+                Container<TData> proxy = new Container<TData> 
+                { 
+                    Data = (TData)Convert.ChangeType(container.Data, typeof(TData), CultureInfo.InvariantCulture),
+                    Head = false
+                };
+
+                proxy.Results.AddRange(container.Results);
+                return Analyze(proxy);
+            }
             else throw new InvalidOperationException("A dependency was specified on an analyzer with a different target data type, and no alternate target instance was provided to analyze.");
 
             Outcome Analyze(Container<TData> target, bool tangent = false)

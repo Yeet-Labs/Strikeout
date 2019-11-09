@@ -88,7 +88,7 @@ namespace Strikeout.Tests.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} can&apos;t be null..
+        ///   Looks up a localized string similar to {0} can&apos;t be empty..
         /// </summary>
         internal static string BasicFailureA {
             get {
@@ -97,7 +97,7 @@ namespace Strikeout.Tests.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} can&apos;t be empty..
+        ///   Looks up a localized string similar to That&apos;s too short!.
         /// </summary>
         internal static string BasicFailureB {
             get {
@@ -106,11 +106,11 @@ namespace Strikeout.Tests.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to That&apos;s too short!.
+        ///   Looks up a localized string similar to {0} can&apos;t be null..
         /// </summary>
-        internal static string BasicFailureC {
+        internal static string EssentialFailureA {
             get {
-                return ResourceManager.GetString("BasicFailureC", resourceCulture);
+                return ResourceManager.GetString("EssentialFailureA", resourceCulture);
             }
         }
         

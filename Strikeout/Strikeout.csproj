@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-prerelease-1</Version>
+    <Version>0.1.0</Version>
     <Company>Yeet Labs</Company>
     <Authors>YeetLabs, TheFanatr</Authors>
     <Product>Strikeout Validation Engine</Product>
@@ -13,12 +13,12 @@
     <PackageProjectUrl>https://github.com/YeetLabs/Strikeout</PackageProjectUrl>
     <RepositoryUrl>https://github.com/YeetLabs/Strikeout</RepositoryUrl>
     <PackageTags>data validation SDK API form input sanitation sterilization</PackageTags>
-    <PackageReleaseNotes>This is one of the initial prereleases of Strikeout; there may be numerous unresolved issues.</PackageReleaseNotes>
+    <PackageReleaseNotes>This is one of the initial releases of Strikeout; there may be numerous unresolved issues.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
